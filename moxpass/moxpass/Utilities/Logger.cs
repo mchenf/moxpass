@@ -38,9 +38,13 @@ namespace moxpass.Utilities
 
         }
 
-        public static void StopLogging()
+        public static void StopLogging(bool HideLogDir)
         {
             Trace.Flush();
+            if (HideLogDir)
+            {
+                return;
+            }
             string timestamp = _stopwatch.ElapsedMilliseconds.ToString();
             Console.Write("[");
             Console.Write(timestamp);

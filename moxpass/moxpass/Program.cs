@@ -17,12 +17,14 @@ namespace moxpass
              */
 
             int argLen = args.Length;
+            bool hideCout = false;
             if (argLen == 3)
             {
                 int position = -1;
                 if (args[0] == "complete" &&
                     int.TryParse(args[1], out position))
                 {
+                    hideCout = true;
                     string[] result = AstHandler.Complete(position, args[2]);
 
                     for (int i = 0; i < result.Length; i++)
@@ -38,7 +40,7 @@ namespace moxpass
 
 
             Logger.Log("Application ended, exiting...");
-            Logger.StopLogging();
+            Logger.StopLogging(hideCout);
         }
     }
 }
