@@ -14,21 +14,24 @@ namespace moxpass.Utilities
         }
 
 
-        public static string[] Command(int Position, string AstStr)
+        public static string[] Complete(int Position, string AstStr)
         {
 
             if (Position == 8)
             {
-                return new string[] {
-                    "/?", "-?", "-h", "/h",
-                    "--help",
-                    "-v", "--version",
-                    "account",
-                    "secret",
-                    "login",
-                    "config",
-                    "complete"
-                };
+                if (AstStr == "moxpass")
+                {
+                    return new string[] {
+                        "/?", "-?", "/h", "-h",
+                        "--help",
+                        "-v", "--version",
+                        "account",
+                        "secret",
+                        "login",
+                        "config",
+                        "complete"
+                    };
+                }
             }
 
             if (Position == 14)
@@ -37,7 +40,7 @@ namespace moxpass.Utilities
                 {
                     return new string[]
                     {
-                        "/?", "-?", "-h", "/h",
+                        "/?", "-?", "/h", "-h",
                         "--help",
                         "reset"
                     };
@@ -50,7 +53,7 @@ namespace moxpass.Utilities
                 {
                     return new string[]
                     {
-                        "/?", "-?", "-h", "/h",
+                        "/?", "-?", "/h", "-h",
                         "--help",
                         "list",
                         "generate",
@@ -63,7 +66,7 @@ namespace moxpass.Utilities
                 {
                     return new string[]
                     {
-                        "/?", "-?", "-h", "/h",
+                        "/?", "-?", "/h", "-h",
                         "--help",
                         "list",
                         "get",
@@ -78,7 +81,7 @@ namespace moxpass.Utilities
                 {
                     return new string[]
                     {
-                        "/?", "-?", "-h", "/h",
+                        "/?", "-?", "/h", "-h",
                         "--help",
                         "list",
                         "add"
@@ -91,7 +94,7 @@ namespace moxpass.Utilities
             {
                 "Invalid Option, see help:",
                 "moxpass /?", "moxpass -?",
-                "moxpass -h", "moxpass /h",
+                "moxpass /h", "moxpass -h",
                 "moxpass --help",
             };
         }

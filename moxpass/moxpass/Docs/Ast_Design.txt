@@ -1,0 +1,54 @@
+﻿
+/* AST Design
+ * 
+ *           1         2         3
+ * 0123456789012345678901234567890123456789
+ * moxpass /?
+ * moxpass -?
+ * moxpass --help
+ * moxpass -v
+ * moxpass --version
+  *           1         2         3
+ * 0123456789012345678901234567890123456789
+ * moxpass account /?
+ * moxpass account -?
+ * moxpass account --help
+ * moxpass account list -a
+ * moxpass account list --all
+ * moxpass account list (<Friendly_Name>|<Login_Url>)
+ * moxpass account add <Friendly_Name>
+ * moxpass account add <Friendly_Name> <Login_Url>
+ * moxpass account add <Friendly_Name> <Login_Url> <user_identity>
+ * moxpass account <Friendly_Name> add url <Login_Url>
+ * moxpass account <Friendly_Name> add id <user_identity>
+ *           1         2         3
+ * 0123456789012345678901234567890123456789
+ * moxpass secret /?
+ * moxpass secret -?
+ * moxpass secret --help
+ * moxpass secret list <Friendly_Name>
+ * moxpass secret generate
+ * moxpass secret generate <length>
+ * moxpass secret generate <length> <complexity>
+ * moxpass secret show <Friendly_Name>
+ * moxpass secret clip <Friendly_Name>
+ *           1         2         3
+ * 0123456789012345678901234567890123456789
+ * moxpass login /?
+ * moxpass login -?
+ * moxpass login --help
+ * moxpass login [<email>]
+ * moxpass login reset [<email>]
+ *           1         2         3
+ * 0123456789012345678901234567890123456789
+ * moxpass config /?
+ * moxpass config -?
+ * moxpass config --help
+ * moxpass config list -a
+ * moxpass config list --all
+ * moxpass config get <key>
+ * moxpass config set <key> <val>
+ *           1         2         3
+ * 0123456789012345678901234567890123456789
+ * moxpass complete <position> <AST_string>
+ */
