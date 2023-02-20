@@ -49,8 +49,11 @@ namespace moxpass.Utilities
             Console.Write("moxpass.exe");
             Console.Write("> ");
             Console.WriteLine($"Exited, see log file here:");
-            string formatedDir = logfileDir.Replace("\\", "/");
-            Console.WriteLine($"file://{formatedDir}");
+            if (logfileDir is not null)
+            {
+                string formatedDir = logfileDir.Replace("\\", "/");
+                Console.WriteLine($"file://{formatedDir}");
+            }
         }
     }
 }

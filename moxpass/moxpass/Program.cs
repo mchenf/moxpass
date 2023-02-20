@@ -18,6 +18,7 @@ namespace moxpass
 
 
             Logger.Log("Application ended, exiting...");
+            Logger.StopLogging(logfileDir);
         }
     }
 }
