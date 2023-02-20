@@ -1,4 +1,5 @@
 ﻿using moxpass.Utilities;
+using System;
 
 
 namespace moxpass
@@ -11,13 +12,27 @@ namespace moxpass
 
             Logger.Log("Application started.");
 
+
+            int argLen = args.Length;
+            bool hideCout = false;
+            /*
+             *           1         2         3
+             * 0123456789012345678901234567890123456789
+             * moxpass /?
+             * moxpass -?
+             * moxpass--help
+             * moxpass - v
+             * moxpass--version
+             */
+
+
+
+
             /*           1         2         3
              * 0123456789012345678901234567890123456789
              * moxpass complete <position> <AST_string>
              */
 
-            int argLen = args.Length;
-            bool hideCout = false;
             if (argLen == 3)
             {
                 int position = -1;
@@ -33,11 +48,6 @@ namespace moxpass
                     }
                 }
             }
-
-
-
-
-
 
             Logger.Log("Application ended, exiting...");
             Logger.StopLogging(hideCout);
