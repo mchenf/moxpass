@@ -90,13 +90,7 @@ namespace moxpass.Utilities
             }
 
 
-            return new string[]
-            {
-                "Invalid Option, see help:",
-                "moxpass /?", "moxpass -?",
-                "moxpass /h", "moxpass -h",
-                "moxpass --help",
-            };
+            return Array.Empty<string>();
         }
 
     }
