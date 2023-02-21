@@ -24,7 +24,18 @@ namespace moxpass
              * moxpass - v
              * moxpass--version
              */
+            if (argLen == 1)
+            {
+                string[] helpArg = new string[]
+                {
+                    "/?", "-?", "-h", "/?",
+                    "--help"
+                };
+                if (helpArg.Contains(args[0]))
+                {
 
+                }
+            }
 
 
 
