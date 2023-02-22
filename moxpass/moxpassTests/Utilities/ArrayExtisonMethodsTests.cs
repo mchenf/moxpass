@@ -71,6 +71,12 @@ namespace moxpass.Utilities.Tests
             new char[] { 'm', 'o', 'x', 'p', 'a', 's', 'y', 'r', 't', 'y', 'r', 't', 'y', 'r', 't', 'y' },
             DisplayName = "Long origin, short head, repeat filler >1 times")]
         [DataRow(
+            new char[] { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' },
+            new char[0] { },
+            new char[] { 'm', 'o', 'x', 'p', 'a', 's', },
+            new char[] { 'm', 'o', 'x', 'p', 'a', 's', 'm', 'o', 'x', 'p', 'a', 's', 'm', 'o', 'x', 'p' },
+            DisplayName = "Long origin, no head, repeat filler >1 times")]
+        [DataRow(
             new char[] { '0', '0', '0', '0' },
             new char[] { 'y', 'r', 't' },
             new char[] { 'm', 'o', 'x', 'p', 'a', 's', },
@@ -82,6 +88,7 @@ namespace moxpass.Utilities.Tests
             new char[] { 'y', 'r', 't' },
             new char[] { 'm', 'o' },
             DisplayName = "Short origin, long head, no filler")]
+
         public void SegmentFillTest1(
             char[] arg1, 
             char[] arg2, 

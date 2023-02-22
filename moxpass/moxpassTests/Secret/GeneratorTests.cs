@@ -12,24 +12,34 @@ namespace moxpass.Secret.Tests
     public class GeneratorTests
     {
         [TestMethod()]
-        [DataRow(16)]
-        public void GenerateTest(int len)
+        [DataRow(Complexity.Full)]
+        [DataRow(Complexity.Lowers)]
+        [DataRow(Complexity.Uppers)]
+        [DataRow(Complexity.AlphaOnly)]
+        [DataRow(Complexity.NoSymbol)]
+        public void GetSeedTableTest(Complexity cpx)
         {
+            Generator g = new Generator(cpx);
 
-            int[] stats = new int[256];
-            //Generate 10000 times bytes, and store data
-            for (int i = 0; i < 100000; i++)
+            g.GetSeedTable();
+            Assert.IsTrue(true);
+        }
+
+        [TestMethod()]
+        [DataRow(Complexity.Full, 8, 16)]
+        [DataRow(Complexity.Lowers, 8, 16)]
+        [DataRow(Complexity.Uppers, 8, 16)]
+        [DataRow(Complexity.AlphaOnly, 8, 16)]
+        [DataRow(Complexity.NoSymbol, 8, 16)]
+        public void SpewTest(Complexity cpx, int lower, int higher)
+        {
+            Generator g = new Generator(cpx);
+
+            Console.WriteLine("The complexity is: {0}", cpx.ToString());
+            for (int i = lower; i <= higher; i++)
             {
-                Span<byte> b = Generator.Generate(len,
-                    (a, b) => a < b.Lower || a > b.Upper);
-
-
-                Generator.RecordResult(b.ToArray(), stats);
-
+                Console.WriteLine(g.Spew(i));
             }
-
-            Generator.PrintHisto(stats);
-
             Assert.IsTrue(true);
         }
     }
