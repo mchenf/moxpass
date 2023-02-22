@@ -1,4 +1,5 @@
-﻿using moxpass.Utilities;
+﻿using moxpass.Secret;
+using moxpass.Utilities;
 using System;
 
 
@@ -15,15 +16,6 @@ namespace moxpass
 
             int argLen = args.Length;
             bool hideCout = false;
-            /*
-             *           1         2         3
-             * 0123456789012345678901234567890123456789
-             * moxpass /?
-             * moxpass -?
-             * moxpass--help
-             * moxpass - v
-             * moxpass--version
-             */
             if (argLen == 1)
             {
                 string[] helpArg = new string[]
@@ -37,18 +29,10 @@ namespace moxpass
                 }
             }
 
-
-
-            /*           1         2         3
-             * 0123456789012345678901234567890123456789
-             * moxpass complete <position> <AST_string>
-             */
-
             if (argLen == 3)
             {
-                int position = -1;
                 if (args[0] == "complete" &&
-                    int.TryParse(args[1], out position))
+                    int.TryParse(args[1], out int position))
                 {
                     hideCout = true;
                     string[] result = AstHandler.Complete(position, args[2]);
@@ -57,6 +41,16 @@ namespace moxpass
                     {
                         Console.WriteLine(result[i]);
                     }
+                }
+
+                if (args[0] == "secret" && args[1] == "generate")
+                {
+                    if (int.TryParse(args[2], out int passLen))
+                    {
+                        Generator g = new Generator();
+                        Console.WriteLine(g.Spew(passLen));
+                    }
+
                 }
             }
 
