@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using moxpass.Utilities;
 
 namespace moxpass.Secret
 {
@@ -31,27 +32,49 @@ namespace moxpass.Secret
         private char[] seed = new char[256];
         private void fillSeed(Complexity complexity)
         {
+            char[] filler;
             switch (complexity)
             {
                 case Complexity.Lowers:
-                    char[] iteration = getLowers();
-                    
+                    filler = getLowers();
                     break;
                 case Complexity.Uppers:
+                    filler = getUppers();
                     break;
                 case Complexity.Numbers:
+                    filler = getNumbers();
                     break;
                 case Complexity.Symbols:
+                    filler = getSymbol1()
+                        .GlueWith(getSymbol2())
+                        .GlueWith(getSymbol3())
+                        .GlueWith(getSymbol4());
                     break;
                 case Complexity.NoSymbol:
+                    filler = getLowers()
+                        .GlueWith(getUppers())
+                        .GlueWith(getNumbers());
                     break;
                 case Complexity.AlphaOnly:
+                    filler = getLowers()
+                        .GlueWith(getUppers());
                     break;
                 case Complexity.Full:
+                    filler = getLowers()
+                        .GlueWith(getUppers())
+                        .GlueWith(getNumbers())
+                        .GlueWith(getSymbol1())
+                        .GlueWith(getSymbol2())
+                        .GlueWith(getSymbol3())
+                        .GlueWith(getSymbol4());
                     break;
                 default:
+                    filler = new char[] {'x'}; 
                     break;
             }
+
+
+            seed.SegmentFill(filler);
         }
         public Generator(int length, Complexity complexity = Complexity.Full)
         {
