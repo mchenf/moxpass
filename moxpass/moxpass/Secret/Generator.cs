@@ -70,7 +70,7 @@ namespace moxpass.Secret
             for (int i = 0; i < result.Length; i++)
             {
                 double tmp = (double)result[i] / (double)max;
-                int steps = (int)(tmp * 100);
+                int steps = (int)(tmp * 1000);
                 Console.Write(i.ToString().PadLeft(3, '0'));
                 Console.Write("\t");
                 Console.Write(getProgressBar(steps));
