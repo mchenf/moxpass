@@ -54,6 +54,22 @@ namespace moxpass
                 }
             }
 
+            if (argLen == 4)
+            {
+                if (args[0] == "secret" && args[1] == "generate")
+                {
+                    if (
+                        Enum.TryParse(args[2], true, out Complexity cpx)
+                        && int.TryParse(args[3], out int passLen)
+                        )
+                    {
+                        Generator g = new Generator(cpx);
+                        Console.WriteLine(g.Spew(passLen));
+                    }
+
+                }
+            }
+
             Logger.Log("Application ended, exiting...");
             Logger.StopLogging(hideCout);
         }

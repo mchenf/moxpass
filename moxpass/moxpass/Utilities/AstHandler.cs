@@ -1,4 +1,5 @@
-﻿using System;
+﻿using moxpass.Secret;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace moxpass.Utilities
 
         public static string[] Complete(int Position, string AstStr)
         {
+            
 
             if (Position == 8)
             {
@@ -86,6 +88,15 @@ namespace moxpass.Utilities
                         "list",
                         "add"
                     };
+                }
+            }
+
+            if (Position == 24)
+            {
+                if (AstStr == "moxpass secret generate")
+                {
+                    return Enum.GetNames(typeof(Complexity));
+                    
                 }
             }
 
