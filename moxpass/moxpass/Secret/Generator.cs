@@ -8,8 +8,57 @@ using System.Security.Cryptography;
 namespace moxpass.Secret
 {
 
-    public static class Generator
+    public class Generator
     {
+        private static char[] getChars(char start, int len)
+        {
+            char[] result = new char[len];
+            for (int i = 0; i < result.Length; i++)
+            {
+                result[i] = (char)(start + i);
+            }
+
+            return result;
+        }
+        private static char[] getLowers() => getChars('a', 26);
+        private static char[] getUppers() => getChars('A', 26);
+        private static char[] getNumbers() => getChars('0', 10);
+        private static char[] getSymbol1() => getChars('!', 15);
+        private static char[] getSymbol2() => getChars(':', 7);
+        private static char[] getSymbol3() => getChars('[', 6);
+        private static char[] getSymbol4() => getChars('{', 4);
+
+        private char[] seed = new char[256];
+        private void fillSeed(Complexity complexity)
+        {
+            switch (complexity)
+            {
+                case Complexity.Lowers:
+                    char[] iteration = getLowers();
+                    
+                    break;
+                case Complexity.Uppers:
+                    break;
+                case Complexity.Numbers:
+                    break;
+                case Complexity.Symbols:
+                    break;
+                case Complexity.NoSymbol:
+                    break;
+                case Complexity.AlphaOnly:
+                    break;
+                case Complexity.Full:
+                    break;
+                default:
+                    break;
+            }
+        }
+        public Generator(int length, Complexity complexity = Complexity.Full)
+        {
+
+        }
+
+
         public static Span<byte> Generate(int length, Complexity complexity = Complexity.Full)
         {
             Span<byte> span = new Span<byte>(new byte[length]);

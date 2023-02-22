@@ -13,13 +13,26 @@ namespace moxpass.Utilities.Tests
     {
         [TestMethod()]
         [DataRow(
-            new int[] {0, 0, 0, 0, 0}, 
-            new int[] {1, 2},
-            new int[] {1, 2, 1, 2, 1})]
-        public void SegmentFillTest(int[] arg1, int[] arg2, int[] expected)
+            new char[] { '0', '0', '0', '0', '0', '0', '0', '0' },
+            new char[] { 'm', 'o', 'x', 'p', 'a', 's',},
+            new char[] { 'm', 'o', 'x', 'p', 'a', 's', 'm', 'o'},
+            DisplayName = "Long orign short filler")]
+        [DataRow(
+            new char[] { '0', '0', '0', '0' },
+            new char[] { 'm', 'o', 'x', 'p', 'a', 's', },
+            new char[] { 'm', 'o', 'x', 'p' },
+            DisplayName = "short orign long filler")]
+        [DataRow(
+            new char[] { '0', '0', '0', '0' , '0', '0' },
+            new char[] { 'm', 'o' },
+            new char[] { 'm', 'o', 'm', 'o', 'm', 'o' },
+            DisplayName = "very long origin with short filler")]
+        public void SegmentFillTest(char[] arg1, char[] arg2, char[] expected)
         {
             arg1.SegmentFill(arg2);
 
+            Console.WriteLine($"arg1={string.Join(',', arg1)}");
+            CollectionAssert.AreEqual(expected, arg1);
         }
     }
 }
