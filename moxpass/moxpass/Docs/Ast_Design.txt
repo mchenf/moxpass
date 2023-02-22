@@ -29,7 +29,7 @@
  * moxpass secret list <Friendly_Name>
  * moxpass secret generate
  * moxpass secret generate <length>
- * moxpass secret generate <length> <complexity>
+ * moxpass secret generate <complexity> <length>
  * moxpass secret show <Friendly_Name>
  * moxpass secret clip <Friendly_Name>
  *           1         2         3
