@@ -6,28 +6,23 @@ using System.Threading.Tasks;
 
 namespace moxpass.Help
 {
-    public static class HelpHandler
+    public class HelpHandler
     {
-        private static void writeUsage(string Ast, string Opts)
-        {
-            Console.Write("usage: ");
-            Console.Write(Ast + " " + Opts);
-            Console.WriteLine();
-            Console.WriteLine();
-        }
+        private static readonly HttpClient client = new HttpClient();
+        private static readonly string urlBase = @"https://github.com/mchenf/moxpass/wiki/";
 
-        private static void writeFuncBlock(string FunctionBlock)
+        public static async Task PrintHelp (string uri)
         {
-            Console.WriteLine(FunctionBlock);
+            string fullUrl = uri;
+            Console.WriteLine("Trying to get web content here:");
+            Console.WriteLine(uri);
+            using (HttpResponseMessage res = await client.GetAsync(uri))
+            {
+                res.EnsureSuccessStatusCode();
+                string responseBody = await client.GetStringAsync(uri);
+                Console.WriteLine(responseBody);
+            }
         }
-
-        private static void writeOptsDescription(string opt, string description)
-        {
-            Console.Write(new string(' ', 4));
-            Console.Write(opt.PadRight(21, ' '));
-            Console.WriteLine(description);
-        }
-
 
     }
 }
