@@ -13,7 +13,8 @@ namespace moxpass.Help.Tests
     {
         [TestMethod()]
         [DataRow(@"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a", DisplayName = "Mozilla")]
-        [DataRow(@"https://github.com/mchenf/moxpass/wiki/moxpass", DisplayName = "Github mchenf moxpass")]
+        //[DataRow(@"https://github.com/mchenf/moxpass/wiki/moxpass", DisplayName = "Github mchenf moxpass")]
+        [DataRow(@"https://raw.githubusercontent.com/mchenf/moxpass/main/moxpass/moxpass/Register-MoxpassAutoComplete.ps1", DisplayName = "Github raw ps1")]
         public async Task PrintHelpTest(string arg1)
         {
             await HelpHandler.PrintHelp(arg1);
