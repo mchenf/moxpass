@@ -8,7 +8,37 @@
         <link rel="shortcut icon" href="moxpass.ico" type="image/x-icon">
     </head>
     <body>
+        <div class="main">
+            <div class="PageTitle">
+                <img class="Logo" src="./moxpass.ico" width="128" height="128"></img>
+                <h1>moxpass-login Manual Page</h1>
+            </div>
+            <h2>NAME</h2>
+            <p>moxpass-login - Manage login behavior, set default email, reset password, and <a href="./glossary.html#as">authenticated session</a>.</p>
+            <h2>SYNOPSIS</h2>
+            <div class="Synopsis"><code>moxpass login [help | -h | --help] [&lt;email&gt;] [reset &lt;email&gt;]</code></div>
 
+                
+            <h2>DESCRIPTION</h2>
+            <p>This command manages the current login session.</p>
+            <p>There are certain operations that can only be done with an authenticated login session, while others do not.</p>
+            <h2>OPTIONS</h2>
+            <h3>
+                <code>-h</code><br>
+                <code>--help</code>
+            </h3>
+            <p>Prints the synopsis and a list of commonly used commands.</p>
+            <h2>MOXPASS-ACCOUNT COMMANDS</h2>
+            <h3><code>moxpass login [&lt;email&gt;]</code></h3>
+            <div class="CmdTags"><span class="Auth">Auth Required!</span></div>
+            <p>Login as an <a href="./glossary.html#as">authenticated session</a> based on the email and authenticated session settings in the setting file.</p>
+            <p>If the email argument is supplied, switch to that email temporarily and attempt to login. This <b>does not</b> change the email in the setting file.</p>
+            <h3><code>moxpass login reset [&lt;email&gt;]</code></h3>
+            <p>Enter password reset procedure based on the email in the setting file.</p>
+            <p>If the email argument is supplied, switch to that email and enter password reset procedure. This <b>does not</b> change the email in the setting file.</p>
+
+            <div class="Tail"></div>
+        </div>
     </body>
     <footer>
 

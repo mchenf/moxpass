@@ -8,6 +8,14 @@ div.main {
     width:50vw;
     padding-left: 25vw;
 }
+div.main div.PageTitle{
+    display: block;
+    height: 128px;
+}
+div.main img.Logo {
+    float:right;
+    background-color: white;
+}
 
 div.main h1 {
     border-bottom: 3px solid black;
@@ -25,11 +33,11 @@ div.main h2 {
 div.main h3 {
     margin-bottom: 0.5em;
     margin-top: 1em;
-    background-color: antiquewhite;
-
+    background-color: lightblue;
+    padding-left: 0.5em;
 }
 
-div.main pre {
+div.main div.Synopsis {
     border: 1px solid black;
     border-radius: 5px;
     padding: 1em;
@@ -37,7 +45,7 @@ div.main pre {
     box-shadow: 1px 1px gray inset;
 }
 div.main code {
-    font-family: "Lucida Console";
+    font-family: "Cascadia Code", monospace, "Lucida Console";
 }
 div.main div.CmdTags {
     margin-bottom: 0.25em;
