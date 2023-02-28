@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>How Works Encryption</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="moxpass.ico" type="image/x-icon">
+    </head>
+    <body>
+        <div class="main">
+            <div class="PageTitle">
+                <img class="Logo" src="./moxpass.ico" width="128" height="128"></img>
+                <h1>How Does Moxpass Work? - Encryption</h1>
+            </div>
+            <p>Moxpass allows a user to quickly access the stored secrets and passwords through command-line. Once configured and authenticated properly, the tool will display the secret/password for a set period of time, before it becomes hidden again.</p>
+            <p>Moxpass stores user's secrets locally, by using a binary file. By default, the binary file is always encrypted.</p>
+            <p>The encryption method works closely with the way moxpass authenticates the user. If the master password is lost with the user, even moxpass will not know how to restore the encrypted binary file where the secrets reside.</p>
+            <p>For restoration, moxpass uses another method. Moxpass can use an algorithm and a segment of data to rebuild a secret. Not only can it be used to recover the master key, it also works as a standalone method of storing secrets (i.e. on a piece of paper). But it's a topic for another day, perhaps.</p>
+            <h2>About Binary Files</h2>
+            <p>The moxpass binary files are not a specific type of file used just for moxpass. Moxpass will attempt to decrypt any .bin files depending on the settings.</p>
+            <p>When an login attempt is made, moxpass will first search for the file under its data directory. It will match the bin file with the user's email as its name.</p>
+            <p>Once the binary data is loaded into the app, it will use the first 128 bits as the salt, and then salt and hash the password supplied, thereby producing a fingerprint binary.</p>
+            <p>The fingerprint will be used to decrypt the rest of the binary data read, by flipping the bit depending on if the fingerprint is a 1 or a 0.</p>
+            <div class="Synopsis">
+                <code>
+                    0010101110010101 - binary data<br>
+                    1001110101110110 - fingerprint<br>
+                    1011011011100011 - secret
+                </code>
+            </div>
+            <p></p>
+            <p>Then moxpass will try to align and match the positioning binary signatures placed during when the bin file was created. If the positioning binary signatures are not found, moxpass would know that the user supplied a wrong master key. The secret can only make sense if the user had supplied the correct master key to the app.</p>
+            <div class="Tail"></div>
+        </div>
+    </body>
+    <footer>
+
+    </footer>
+</html>
