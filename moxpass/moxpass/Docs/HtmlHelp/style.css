@@ -50,3 +50,7 @@ div.main span.Auth {
     font-weight: bold;
     color: red;
 }
+
+div.main > div.Tail {
+    height: 50vh;
+}
