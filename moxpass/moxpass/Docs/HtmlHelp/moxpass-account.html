@@ -8,7 +8,54 @@
         <link rel="shortcut icon" href="moxpass.ico" type="image/x-icon">
     </head>
     <body>
+        <div class="main">
+            <h1>moxpass-account Manual Page</h1>
+            <h2>NAME</h2>
+            <p>moxpass-account - Manage a <a href="./glossary.html#ao">moxpass account object</a></p>
+            <h2>SYNOPSIS</h2>
+            <pre>
+<code>moxpass account [-h | --help] 
+    [list [-a | --all | &lt;Friendly_Name&gt; | &lt;Login_Url&gt;]] 
+    [add &lt;Friendly_Name&gt [&lt;Login_Url&gt;] [&lt;User_Identity&gt;]] 
+    [&lt;Friendly_Name&gt; url-add &lt;Login_Url&gt;]
+    [&lt;Friendly_Name&gt; url-del &lt;Login_Url&gt;]
+    [&lt;Friendly_Name&gt; id-add &lt;User_Identity&gt;]
+    [&lt;Friendly_Name&gt; id-del &lt;User_Identity&gt;]</code></pre>
+                
+            <h2>DESCRIPTION</h2>
+            <p>This command manages a <a href="./glossary.html#ao">moxpass account object</a> under a specified moxpass login session.</p>
+            <p>There are certain operations that can only be done with an authenticated login session, while others do not.</p>
+            <h2>OPTIONS</h2>
+            <h3>
+                <code>-h</code><br>
+                <code>--help</code>
+            </h3>
+            <p>Prints the synopsis and a list of commonly used commands.</p>
 
+            <h2>MOXPASS-ACCOUNT COMMANDS</h2>
+            <h3><code>moxpass account list</code></h3>
+            <p>
+                Print current <a href="./glossary.html#ao">moxpass account object</a> details based on the arguments provided. Can print every object, or try to print a specific account object based on a friendly name, or a login URL.
+            </p>
+
+            <h3><code>moxpass account add</code></h3>
+            <div class="CmdTags"><span class="Auth">Auth Required!</span></div>
+            <p>Create a new <a href="./glossary.html#ao">moxpass account object</a> based on the arguments provided. Both <a href="./glossary.html#lu">login URL</a> and <a href="./glossary.html#ui">user identity</a> are optional.</p>
+            <p>It doesn't have to be an URL that works. If url doesn't work, moxpass will prompt the user asking if this is a mistake or intended. A common usage is to add a name of an application as the login URL.</p>
+
+            <h3><code>moxpass account &lt;Friendly_Name&gt; url-add &lt;Login_Url&gt;</code></h3>
+            <div class="CmdTags"><span class="Auth">Auth Required!</span></div>
+            <p>Add a <a href="./glossary.html#lu">Login URL</a> to a <a href="./glossary.html#ao">moxpass account object</a>.</p>
+            <h3><code>moxpass account &lt;Friendly_Name&gt; url-del &lt;Login_Url&gt;</code></h3>
+            <div class="CmdTags"><span class="Auth">Auth Required!</span></div>
+            <p>Delete a <a href="./glossary.html#lu">Login URL</a> to a <a href="./glossary.html#ao">moxpass account object</a>.</p>
+            <h3><code>moxpass account &lt;Friendly_Name&gt; id-add &lt;User_Identity&gt;</code></h3>
+            <div class="CmdTags"><span class="Auth">Auth Required!</span></div>
+            <p>Add a <a href="./glossary.html#ui">user identity</a> to a <a href="./glossary.html#ao">moxpass account object</a>.</p>
+            <h3><code>moxpass account &lt;Friendly_Name&gt; id-del &lt;User_Identity&gt;</code></h3>
+            <div class="CmdTags"><span class="Auth">Auth Required!</span></div>
+            <p>Delete a <a href="./glossary.html#ui">user identity</a> to a <a href="./glossary.html#ao">moxpass account object</a>.</p>
+        </div>
     </body>
     <footer>
 

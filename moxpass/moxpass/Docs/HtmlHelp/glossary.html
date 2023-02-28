@@ -8,56 +8,79 @@
         <link rel="shortcut icon" href="moxpass.ico" type="image/x-icon">
     </head>
     <body>
-        <h1 id="a">A</h1>
-        <h2 id="ao">Account, moxpass account object</h2>
-        An object made up with one or multiple <a href="#lu">login URL</a> with their respective user <a href="#isp">identity-secret pair</a>.
-        
-        It allows for an assignment of a friendly name to be consumed when invoking different moxpass commands.
-        <h2 id="as">Authenticated Session</h2>
-        An authenticated session is a
-        <!--TODO: Complete #as-->
-        <h1 id="b">B</h1>
-        <h2 id="bc">Block Code, ASCII Block Code</h2>
-        A 16 by 16 console graph made with ASCII block characters. Representing a SHA256 salted and hashed result of a given user secret.
-        
-        The purpose of the ascii block code is to give user a familiarity of which secret is being used without actually rendering the literal password.
-        <h1 id="c">C</h1>
-        <h1 id="d">D</h1>
-        <h1 id="e">E</h1>
-        <h1 id="f">F</h1>
-        <h2 id="fn">Friendly Name</h2>
-        An alphanumeric, maximum 6-character, human friendly, unique word used to identify different <a href="ao">moxpass account objects</a>.
-        <h1 id="g">G</h1>
-        <h1 id="h">H</h1>
-        <h1 id="i">I</h1>
-        <h2 id="isp">Identity-Secret Pair</h2>
-        An identity-secret pair is a combination of 1:1 relationship between a <a href="#ui">moxpass user identity</a> and a <a href="#us">moxpass user secret</a>. If we are dealing with logins with sso (single sign-on), the same identity-secret pair can be reused.
-        <h1 id="j">J</h1>
-        <h1 id="k">K</h1>
-        <h1 id="l">L</h1>
-        <h2 id="lu">Login URL, moxpass login URL</h2>
-        A moxpass login URL represents an endpoint where user is prompt to provide a <a href="#ui">user identity</a>, i.e., email, phone, etc., so that an authentication can be made via a <a href="#us">user secret</a>.
-        
-        Usually, it is a namesake web url starting with http/https. Other formats are also accepted, i.e. descriptions like "MyNoteBookApp", virtual machines, database, or a local file url.
-        
-        <h1 id="m">M</h1>
-        <h1 id="n">N</h1>
-        <h1 id="o">O</h1>
-        <h1 id="p">P</h1>
-        <h1 id="q">Q</h1>
-        <h1 id="r">R</h1>
-        <h1 id="s">S</h1>
-        <h1 id="t">T</h1>
-        <h1 id="u">U</h1>
-        <h2 id="ui">User Identity, ID, moxpass user identity</h2>
-        A moxpass user identity represents the part user is required to put in as "username" in any authentication prompt UI.
-        <h2 id="us">User Secret, moxpass user secret</h2>
-        A moxpass user secret usually represents the part user is required to put in as "password" in any authentication prompt UI. Note that a moxpass user secret cannot be created without an <a href="#ui">identity</a>.
-        <h1 id="v">V</h1>
-        <h1 id="w">W</h1>
-        <h1 id="x">X</h1>
-        <h1 id="y">Y</h1>
-        <h1 id="z">Z</h1>
+        <div class="main">
+            <h1 id="a">A</h1>
+            <h2 id="ao">Account, moxpass account object</h2>
+            <p>
+                An object made up with one or multiple <a href="#lu">login URL</a> with their respective user <a href="#isp">identity-secret pair</a>.
+            </p>
+            <p>
+                It allows for an assignment of a friendly name to be consumed when invoking different moxpass commands.
+            </p>
+            <h2 id="as">Authenticated Session</h2>
+            <p>
+                An authenticated session is when user choose to sign-in for the defined period of time with moxpass app. During this period, user will not be prompt for the password repeatedly.
+            </p>
+            <h1 id="b">B</h1>
+            <h2 id="bc">Block Code, ASCII Block Code</h2>
+            <p>
+                A 16 by 16 console graph made with ASCII block characters. Representing a SHA256 salted and hashed result of a given user secret.
+            </p>
+            <p>
+                The purpose of the ascii block code is to give user a familiarity of which secret is being used without actually rendering the literal password.
+            </p>
+            <h1 id="c">C</h1>
+            <h1 id="d">D</h1>
+            <h1 id="e">E</h1>
+            <h1 id="f">F</h1>
+            <h2 id="fn">Friendly Name</h2>
+            <p>
+                An alphanumeric, maximum 6-character, human friendly, unique word used to identify different <a href="#ao">moxpass account objects</a>.
+            </p>
+            
+            <h1 id="g">G</h1>
+            <h1 id="h">H</h1>
+            <h1 id="i">I</h1>
+            <h2 id="isp">Identity-Secret Pair</h2>
+            <p>
+                An identity-secret pair is a combination of 1:1 relationship between a <a href="#ui">moxpass user identity</a> and a <a href="#us">moxpass user secret</a>. If we are dealing with logins with sso (single sign-on), the same identity-secret pair can be reused.
+            </p>
+            
+            <h1 id="j">J</h1>
+            <h1 id="k">K</h1>
+            <h1 id="l">L</h1>
+            <h2 id="lu">Login URL, moxpass login URL</h2>
+            <p>
+                A moxpass login URL represents an endpoint where user is prompt to provide a <a href="#ui">user identity</a>, i.e., email, phone, etc., so that an authentication can be made via a <a href="#us">user secret</a>.
+            
+                Usually, it is a namesake web url starting with http/https. Other formats are also accepted, i.e. descriptions like "MyNoteBookApp", virtual machines, database, or a local file url.
+            </p>
+            
+            
+            <h1 id="m">M</h1>
+            <h1 id="n">N</h1>
+            <h1 id="o">O</h1>
+            <h1 id="p">P</h1>
+            <h1 id="q">Q</h1>
+            <h1 id="r">R</h1>
+            <h1 id="s">S</h1>
+            <h1 id="t">T</h1>
+            <h1 id="u">U</h1>
+            <h2 id="ui">User Identity, ID, moxpass user identity</h2>
+            <p>
+                A moxpass user identity represents the part user is required to put in as "username" in any authentication prompt UI.
+            </p>
+            <h2 id="us">User Secret, moxpass user secret</h2>
+            <p>
+                A moxpass user secret usually represents the part user is required to put in as "password" in any authentication prompt UI. Note that a moxpass user secret cannot be created without an <a href="#ui">identity</a>.
+            </p>
+            
+            <h1 id="v">V</h1>
+            <h1 id="w">W</h1>
+            <h1 id="x">X</h1>
+            <h1 id="y">Y</h1>
+            <h1 id="z">Z</h1>
+        </div>
     </body>
     <footer>
 
