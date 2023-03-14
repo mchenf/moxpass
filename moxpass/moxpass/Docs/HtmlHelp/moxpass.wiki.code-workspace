@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../moxpass.wiki"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "HtmlHelp"
+	}
+}
