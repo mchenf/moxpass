@@ -47,7 +47,7 @@ namespace moxpass
                 {
                     if (int.TryParse(args[2], out int passLen))
                     {
-                        Generator g = new Generator();
+                        SecretGenerator g = new SecretGenerator();
                         Console.WriteLine(g.Spew(passLen));
                     }
 
@@ -63,7 +63,7 @@ namespace moxpass
                         && int.TryParse(args[3], out int passLen)
                         )
                     {
-                        Generator g = new Generator(cpx);
+                        SecretGenerator g = new SecretGenerator(cpx);
                         Console.WriteLine(g.Spew(passLen));
                     }
 

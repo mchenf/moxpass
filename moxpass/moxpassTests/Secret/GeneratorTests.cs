@@ -19,7 +19,7 @@ namespace moxpass.Secret.Tests
         [DataRow(Complexity.NoSymbol)]
         public void GetSeedTableTest(Complexity cpx)
         {
-            Generator g = new Generator(cpx);
+            SecretGenerator g = new SecretGenerator(cpx);
 
             g.GetSeedTable();
             Assert.IsTrue(true);
@@ -33,7 +33,7 @@ namespace moxpass.Secret.Tests
         [DataRow(Complexity.NoSymbol, 8, 16)]
         public void SpewTest(Complexity cpx, int lower, int higher)
         {
-            Generator g = new Generator(cpx);
+            SecretGenerator g = new SecretGenerator(cpx);
 
             Console.WriteLine("The complexity is: {0}", cpx.ToString());
             for (int i = lower; i <= higher; i++)

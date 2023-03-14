@@ -9,7 +9,7 @@ using moxpass.Utilities;
 namespace moxpass.Secret
 {
 
-    public class Generator
+    public class SecretGenerator
     {
         private static char[] getChars(char start, int len)
         {
@@ -75,7 +75,7 @@ namespace moxpass.Secret
             }
             seed.SegmentFill(head, filler);
         }
-        public Generator(Complexity complexity = Complexity.Full)
+        public SecretGenerator(Complexity complexity = Complexity.Full)
         {
             fillSeed(complexity);
         }
