@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:moxpass_gui.Views"
+        xmlns:viewmodel="clr-namespace:moxpass_gui.ViewModels"
+        x:Name="PromptWindow"
         WindowStyle="None"
         mc:Ignorable="d"
         Title="Prompt" Height="320pt" Width="220pt" 
@@ -20,6 +22,7 @@
             <Setter Property="FontFamily" Value="Segoe UI"></Setter>
             <Setter Property="Margin" Value="4pt 0pt"></Setter>
         </Style>
+        
     </Window.Resources>
     <StackPanel>
         <StackPanel Orientation="Horizontal">
@@ -33,7 +36,7 @@
                 </TextBlock>
             </StackPanel>
         </StackPanel>
-        <StackPanel Margin="10pt 22pt">
+        <StackPanel Margin="10pt 22pt" DataContext="{Binding ElementName=PromptWindow}">
             <StackPanel.Resources>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Margin" Value="0pt 5pt"></Setter>
@@ -54,16 +57,17 @@
             <TextBlock>
                 Email
             </TextBlock>
-            <TextBox>
+            <TextBox Text="{Binding Path=Email, Mode=OneWayToSource}">
 
             </TextBox>
             <TextBlock>
                 Password
             </TextBlock>
-            <PasswordBox PasswordChar="●">
+            <PasswordBox x:Name="PassBoxTitle" PasswordChar="●">
 
             </PasswordBox>
-            <Button>Login</Button>
+            <Button Click="LoginClicked" 
+                    IsEnabled="{Binding PasswordBoxReady, Mode=OneWay}">Login</Button>
             <Button Click="CancelClicked">Cancel</Button>
         </StackPanel>
     </StackPanel>
