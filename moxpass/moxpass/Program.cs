@@ -1,5 +1,6 @@
 ﻿using moxpass.Secret;
 using moxpass.Utilities;
+using moxpass.Version;
 using System;
 
 
@@ -25,8 +26,20 @@ namespace moxpass
                 };
                 if (helpArg.Contains(args[0]))
                 {
-
+                    Console.WriteLine("Help to be displayed here:");
+                    //TODO: Complete help logic
+                    return;
                 }
+                string[] versionArgs = new string[]
+                {
+                    "version", "--version", "-v"
+                };
+                if (versionArgs.Contains(args[0]))
+                {
+                    var vhandler = new VersionHandler(0, 1, 1, 3);
+                    Console.WriteLine(vhandler.GetVersionString());
+                }
+
             }
 
             if (argLen == 3)
