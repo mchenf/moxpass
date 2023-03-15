@@ -1,4 +1,5 @@
-﻿using System;
+﻿using moxpass_gui.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,8 @@ namespace moxpass_gui.Views
     /// </summary>
     public partial class Prompt : Window
     {
+
+        private PromptViewModel viewModel = new PromptViewModel();
         public Prompt()
         {
             InitializeComponent();
