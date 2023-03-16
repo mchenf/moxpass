@@ -6,17 +6,46 @@
         xmlns:vr="clr-namespace:moxpass_gui.ValidationRules"
         xmlns:local="clr-namespace:moxpass_gui.Views"
         xmlns:components="clr-namespace:moxpass_gui.Components"
+        x:Name="WndRegistrer"
         WindowStyle="None"
         mc:Ignorable="d"
-        Title="Moxpass Register New User" Height="Auto" Width="800"
+        Title="Moxpass Register New User" Height="Auto" Width="400pt"
         FontFamily="Segoe UI"
         FontSize="12pt">
-    <StackPanel>
+    <Window.Resources>
+    </Window.Resources>
+    <StackPanel DataContext="{Binding ElementName=WndRegistrer}">
+        <StackPanel.Resources>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="Margin" Value="0pt 5pt"></Setter>
+                <Setter Property="TextAlignment" Value="Center"></Setter>
+                <Setter Property="Width" Value="320pt"></Setter>
+            </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Margin" Value="0pt 5pt"></Setter>
+                <Setter Property="Width" Value="126pt"></Setter>
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="0pt 5pt"></Setter>
+                <Setter Property="Width" Value="320pt"></Setter>
+                <Style.Triggers>
+                    <Trigger Property="Validation.HasError" Value="true">
+                        <Setter Property="ToolTip"
+                                Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)/ErrorContent}"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="{x:Type PasswordBox}">
+                <Setter Property="Margin" Value="0pt 5pt"></Setter>
+                <Setter Property="Width" Value="320pt"></Setter>
+            </Style>
+        </StackPanel.Resources>
         <components:MoxpassTitle/>
         <TextBlock>Email Address</TextBlock>
         <TextBox x:Name="tbxEmail">
             <TextBox.Text>
-                <Binding Path="Email">
+                <Binding Path="Email" Mode="OneWayToSource" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
                         <vr:ValidateEmail/>
                     </Binding.ValidationRules>
@@ -24,10 +53,10 @@
             </TextBox.Text>
         </TextBox>
         <TextBlock>Create Password</TextBlock>
-        <TextBox></TextBox>
+        <PasswordBox></PasswordBox>
         <TextBlock>Confirm Password</TextBlock>
-        <TextBox></TextBox>
-        <Button>Create</Button>
-        <Button>Back</Button>
+        <PasswordBox></PasswordBox>
+        <Button Click="CreateClicked">Create</Button>
+        <Button Click="BackClicked">Back</Button>
     </StackPanel>
 </Window>
