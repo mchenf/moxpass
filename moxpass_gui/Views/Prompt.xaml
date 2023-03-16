@@ -4,38 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:moxpass_gui.Views"
-        xmlns:viewmodel="clr-namespace:moxpass_gui.ViewModels"
+        xmlns:components="clr-namespace:moxpass_gui.Components"
         x:Name="PromptWindow"
         WindowStyle="None"
         mc:Ignorable="d"
         Title="Prompt" Height="320pt" Width="220pt" 
         FontFamily="Segoe UI" FontSize="12pt">
     <Window.Resources>
-        <Style TargetType="{x:Type TextBlock}" x:Key="tbxTitle">
-            <Setter Property="FontSize" Value="22pt"></Setter>
-            <Setter Property="FontWeight" Value="Bold"></Setter>
-            <Setter Property="FontFamily" Value="Segoe UI"></Setter>
-            <Setter Property="Margin" Value="2pt 2pt 2pt 0pt"></Setter>
-        </Style>
-        <Style TargetType="{x:Type TextBlock}" x:Key="tbxVersion">
-            <Setter Property="FontSize" Value="8pt"></Setter>
-            <Setter Property="FontFamily" Value="Segoe UI"></Setter>
-            <Setter Property="Margin" Value="4pt 0pt"></Setter>
-        </Style>
         
     </Window.Resources>
     <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Image Source="\Assets\moxpass.ico" Height="32pt" Margin="4pt"/>
-            <StackPanel>
-                <TextBlock x:Name="txb_Title" Style="{StaticResource tbxTitle}">
-                Moxpass
-                </TextBlock>
-                <TextBlock Style="{StaticResource tbxVersion}">
-                    v0.0.3.1 dev
-                </TextBlock>
-            </StackPanel>
-        </StackPanel>
+        <components:MoxpassTitle/>
         <StackPanel Margin="10pt 22pt" DataContext="{Binding ElementName=PromptWindow}">
             <StackPanel.Resources>
                 <Style TargetType="{x:Type TextBlock}">
@@ -67,8 +46,13 @@
 
             </PasswordBox>
             <Button Click="LoginClicked" 
-                    IsEnabled="{Binding PasswordBoxReady, Mode=OneWay}">Login</Button>
+                    IsEnabled="{Binding PasswordBoxReady, Mode=OneWay}">
+                Login</Button>
+            <Button Click="RegisterClicked">
+                Register
+            </Button>
             <Button Click="CancelClicked">Cancel</Button>
+            
         </StackPanel>
     </StackPanel>
 </Window>

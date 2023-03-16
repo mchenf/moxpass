@@ -1,5 +1,4 @@
-﻿using moxpass_gui.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -53,7 +52,7 @@ namespace moxpass_gui.Views
 
         private void PassBoxTitle_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            if(PassBoxTitle.SecurePassword.Length > 6)
+            if(PassBoxTitle.SecurePassword.Length > 4)
             {
                 PasswordBoxReady = true;
             } 
@@ -72,6 +71,13 @@ namespace moxpass_gui.Views
         {
             Debug.Print("The email is:");
             Debug.Print(Email);
+        }
+
+        public void RegisterClicked(object sender, RoutedEventArgs e)
+        {
+            var register = new RegisterNewUser();
+            register.Show();
+            this.Hide();
         }
     }
 }
