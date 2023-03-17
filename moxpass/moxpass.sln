@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "moxpass", "moxpass\moxpass.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "moxpassTests", "moxpassTests\moxpassTests.csproj", "{0F2E73CF-0DEA-4A4C-A60C-2DF03ED3E17F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moxpass_gui", "..\moxpass_gui\moxpass_gui.csproj", "{B8141BD5-D312-412B-9678-1FBE05E965A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "moxpass_gui", "..\moxpass_gui\moxpass_gui.csproj", "{B8141BD5-D312-412B-9678-1FBE05E965A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moxpass_guiTests", "..\moxpass_guiTests\moxpass_guiTests.csproj", "{C8152B4E-FF05-4DA1-BABA-08854D3061EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{B8141BD5-D312-412B-9678-1FBE05E965A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8141BD5-D312-412B-9678-1FBE05E965A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8141BD5-D312-412B-9678-1FBE05E965A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8152B4E-FF05-4DA1-BABA-08854D3061EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8152B4E-FF05-4DA1-BABA-08854D3061EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8152B4E-FF05-4DA1-BABA-08854D3061EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8152B4E-FF05-4DA1-BABA-08854D3061EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

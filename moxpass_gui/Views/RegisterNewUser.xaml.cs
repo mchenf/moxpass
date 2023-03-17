@@ -20,8 +20,6 @@ namespace moxpass_gui.Views
     /// </summary>
     public partial class RegisterNewUser : Window
     {
-
-
         public string Email
         {
             get { return (string)GetValue(EmailProperty); }
@@ -31,8 +29,6 @@ namespace moxpass_gui.Views
         // Using a DependencyProperty as the backing store for Email.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty EmailProperty =
             DependencyProperty.Register("Email", typeof(string), typeof(RegisterNewUser), new PropertyMetadata(string.Empty));
-
-
         public RegisterNewUser()
         {
             InitializeComponent();
@@ -43,7 +39,6 @@ namespace moxpass_gui.Views
             Application.Current.MainWindow.Show();
             Close();
         }
-
         public void CreateClicked(object sender, RoutedEventArgs e)
         {
             Debug.Print($"Current Email is: {Email}");

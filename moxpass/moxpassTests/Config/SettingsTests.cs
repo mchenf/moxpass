@@ -23,7 +23,7 @@ namespace moxpass.Config.Tests
 
 
         [TestMethod()]
-        [DataRow(@"c:\users\mochen\moxpass.setting", "", "")]
+        [DataRow(@"c:\users\mochen\moxpass.setting", "joedoe@company.com", "12s")]
         public void SettingsReadTest(string arg1, string exp1, string exp2)
         {
             var s = new Settings(arg1);
