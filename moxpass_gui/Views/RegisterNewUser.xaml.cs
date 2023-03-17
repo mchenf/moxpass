@@ -29,6 +29,16 @@ namespace moxpass_gui.Views
         // Using a DependencyProperty as the backing store for Email.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty EmailProperty =
             DependencyProperty.Register("Email", typeof(string), typeof(RegisterNewUser), new PropertyMetadata(string.Empty));
+        public bool CanCreate
+        {
+            get { return (bool)GetValue(CanCreateProperty); }
+            set { SetValue(CanCreateProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for CanCreate.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CanCreateProperty =
+            DependencyProperty.Register("CanCreate", typeof(bool), typeof(RegisterNewUser), new PropertyMetadata(false));
+
         public RegisterNewUser()
         {
             InitializeComponent();
