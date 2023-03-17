@@ -16,7 +16,7 @@ namespace moxpass
 
 
             int argLen = args.Length;
-            bool hideCout = false;
+            bool hideCout = true;
             if (argLen == 1)
             {
                 string[] helpArg = new string[]
@@ -76,6 +76,7 @@ namespace moxpass
                         && int.TryParse(args[3], out int passLen)
                         )
                     {
+                        Logger.Log("Generating password...");
                         SecretGenerator g = new SecretGenerator(cpx);
                         Console.WriteLine(g.Spew(passLen));
                     }

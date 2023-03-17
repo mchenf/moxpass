@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
-        <title>moxpass</title>
+        <title>moxpass login</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="style.css">
         <link rel="shortcut icon" href="moxpass.ico" type="image/x-icon">
     </head>
     <body>
-        <h1>moxpass Manual</h1>
+        <div class="main">
+            <div class="PageTitle">
+                <img class="Logo" src="./moxpass.ico" width="128" height="128"></img>
+                <h1>moxpass Manual Page</h1>
+            </div>
+            <h2>NAME</h2>
+            <p>moxpass - A console application for managing local user's secrets and logins, written with C#.</p>
+            <h2>SYNOPSIS</h2>
+            <div class="Synopsis"><code>moxpass login|account|secret|help|config [&lt;arguments&gt;]</code></div>
+
+
+            <h2>DESCRIPTION</h2>
+            <p>This command is the main entrance to the different functions to moxpass application.</p>
+            <h2>OPTIONS</h2>
+            <h3>
+                <code>-h</code><br>
+                <code>--help</code>
+            </h3>
+            <p>Prints the synopsis and a list of commonly used commands.</p>
+            <h2>MOXPASS COMMANDS</h2>
+            <h3><code>moxpass login [&lt;arguments&gt;]</code></h3>
+            <p>
+                Manages login functions, as well as reset.
+                More details see:
+                <a href="./moxpass-login.html">moxpass login</a>.
+            </p>
+            <p>Login is not required for most part. User will be prompt while accessing secrets. see <a href="./how-works-encryption.html">How does encryption work in moxpass</a>.</p>
+            <p>Once logged in, user can be in a state of <a href="./glossary.html#as">authenticated session</a>, where user can be exempt from entering a password.</p>
+            <h3><code>moxpass account [&lt;arguments&gt;]</code></h3>
+            <p>Manages functions related to accounts. More details see: <a href="./moxpass-account.html">moxpass account</a>.</p>
+            <p>The command itself without any argument lists all the <a href="./glossary.html#fn">friendly names</a> for the current logged-in account.</p>
+            <h3><code>moxpass secret [&lt;arguments&gt;]</code></h3>
+            <p>
+                Manages secret functions, mostly secret generation functions. More details see: <a href="./moxpass-secret.html">moxpass secret</a>.
+            </p>
+            <div class="Tail"></div>
+        </div>
 
         <footer>
         </footer>
