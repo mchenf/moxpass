@@ -1,4 +1,5 @@
-﻿using System;
+﻿using moxpass_gui.Models;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -47,6 +48,7 @@ namespace moxpass_gui.Views
         public Prompt()
         {
             InitializeComponent();
+            InitializeUiText();
             PassBoxTitle.PasswordChanged += PassBoxTitle_PasswordChanged;
         }
 
@@ -78,6 +80,30 @@ namespace moxpass_gui.Views
             var register = new RegisterNewUser();
             register.Show();
             this.Hide();
+        }
+
+
+
+        public UiTextResource UiTexts
+        {
+            get { return (UiTextResource)GetValue(UiTextsProperty); }
+            set { SetValue(UiTextsProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for UiTexts.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty UiTextsProperty =
+            DependencyProperty.Register("UiTexts", typeof(UiTextResource), typeof(Prompt), new PropertyMetadata(null));
+
+
+
+        public void InitializeUiText()
+        {
+            UiTexts = new UiTextResource();
+            UiTexts["Email"] = new UILanguage();
+            UiTexts["Email"][UILanguageOptions.enUS] = "Email";
+            UiTexts["Email"][UILanguageOptions.zhCN] = "邮箱";
+
+
         }
     }
 }
