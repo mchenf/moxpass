@@ -1,8 +1,10 @@
 ﻿using moxpass_gui.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -47,8 +49,10 @@ namespace moxpass_gui.Views
 
         public Prompt()
         {
-            InitializeComponent();
+
             InitializeUiText();
+            InitializeComponent();
+
             PassBoxTitle.PasswordChanged += PassBoxTitle_PasswordChanged;
         }
 
@@ -94,16 +98,51 @@ namespace moxpass_gui.Views
         public static readonly DependencyProperty UiTextsProperty =
             DependencyProperty.Register("UiTexts", typeof(UiTextResource), typeof(Prompt), new PropertyMetadata(null));
 
-
-
         public void InitializeUiText()
         {
             UiTexts = new UiTextResource();
-            UiTexts["Email"] = new UILanguage();
-            UiTexts["Email"][UILanguageOptions.enUS] = "Email";
-            UiTexts["Email"][UILanguageOptions.zhCN] = "邮箱";
+            
+            UiTexts["Email", UILanguageOptions.enUS] = "Email";
+            UiTexts["Email", UILanguageOptions.zhCN] = "邮箱";
+
+            UiTexts["Password", UILanguageOptions.enUS] = "Password";
+            UiTexts["Password", UILanguageOptions.zhCN] = "密码";
+
+            UiTexts["Login", UILanguageOptions.enUS] = "Login";
+            UiTexts["Login", UILanguageOptions.zhCN] = "登录";
+
+            UiTexts["Register", UILanguageOptions.enUS] = "Register";
+            UiTexts["Register", UILanguageOptions.zhCN] = "注册";
+
+            UiTexts["Cancel", UILanguageOptions.enUS] = "Cancel";
+            UiTexts["Cancel", UILanguageOptions.zhCN] = "退出";
+
+            Debug.Print("Initialized UI Text");
+        }
+
+        public void cbxLanguage_Selected(object sender, RoutedEventArgs e)
+        {
+            Debug.Print("Language selected.");
+            ComboBox elem = (ComboBox)sender;
 
 
+
+            ComboBoxItem box = elem.SelectedItem as ComboBoxItem;
+
+
+            if (box == null || UiTexts == null || txbEmail == null) { return; }
+
+
+            var capture = UILanguageOptions.enUS;
+            Enum.TryParse(box.Name, out capture);
+            UiTexts.CurrentLangSetting = capture;
+            txbEmail.Text = UiTexts["Email"];
+            txbPass.Text = UiTexts["Password"];
+            bnLogin.Content = UiTexts["Login"];
+            bnRegister.Content = UiTexts["Register"];
+            bnCancel.Content = UiTexts["Cancel"];
+
+            Debug.Print("Updating UI, or at least trying to...");
         }
     }
 }

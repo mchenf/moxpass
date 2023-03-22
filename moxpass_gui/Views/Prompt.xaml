@@ -14,7 +14,19 @@
         
     </Window.Resources>
     <StackPanel>
-        <components:MoxpassTitle/>
+        <Grid Background="Yellow">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="64pt"/>
+            </Grid.ColumnDefinitions>
+            <components:MoxpassTitle Grid.Column="0"/>
+            <ComboBox x:Name="cbxLanguage" SelectionChanged="cbxLanguage_Selected"
+                      Grid.Column="2" Height="20pt">
+                <ComboBoxItem x:Name="enUS"  IsSelected="True">ENG</ComboBoxItem>
+                <ComboBoxItem x:Name="zhCN">中文</ComboBoxItem>
+            </ComboBox>
+        </Grid>
         <StackPanel Margin="10pt 22pt" DataContext="{Binding ElementName=PromptWindow}">
             <StackPanel.Resources>
                 <Style TargetType="{x:Type TextBlock}">
@@ -34,25 +46,29 @@
                 
             </StackPanel.Resources>
 
-            <TextBlock>
+            <TextBlock x:Name="txbEmail">
                 Email
             </TextBlock>
             <TextBox Text="{Binding Path=Email, Mode=OneWayToSource}">
-
             </TextBox>
-            <TextBlock>
+            <TextBlock x:Name="txbPass">
                 Password
             </TextBlock>
             <PasswordBox x:Name="PassBoxTitle" PasswordChar="●">
 
             </PasswordBox>
             <Button Click="LoginClicked" 
-                    IsEnabled="{Binding PasswordBoxReady, Mode=OneWay}">
+                    IsEnabled="{Binding PasswordBoxReady, Mode=OneWay}"
+                    x:Name="bnLogin">
                 Login</Button>
-            <Button Click="RegisterClicked">
+            <Button Click="RegisterClicked"
+                    x:Name="bnRegister">
                 Register
             </Button>
-            <Button Click="CancelClicked">Cancel</Button>
+            <Button Click="CancelClicked"
+                    x:Name="bnCancel">
+                Cancel
+            </Button>
             
         </StackPanel>
     </StackPanel>
