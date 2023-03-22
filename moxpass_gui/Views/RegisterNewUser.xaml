@@ -55,7 +55,7 @@
         <TextBlock>Create Password</TextBlock>
         <PasswordBox x:Name="pbx1"></PasswordBox>
         <TextBlock>Confirm Password</TextBlock>
-        <PasswordBox x:Name="pbx2"></PasswordBox>
+        <PasswordBox x:Name="pbx2" PasswordChanged="pbx2_TextEntered" ></PasswordBox>
         <Button Click="CreateClicked" IsEnabled="{Binding Path=CanCreate, Mode=OneWay}">Create</Button>
         <Button Click="BackClicked">Back</Button>
     </StackPanel>

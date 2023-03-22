@@ -49,9 +49,32 @@ namespace moxpass_gui.Views
             Application.Current.MainWindow.Show();
             Close();
         }
+
         public void CreateClicked(object sender, RoutedEventArgs e)
         {
             Debug.Print($"Current Email is: {Email}");
+
+            if (pbx1.Password != pbx2.Password)
+            {
+                Warning_PasswordInconsistent wd = new Warning_PasswordInconsistent();
+                wd.Show();
+                return;
+            }
+        }
+
+        public void pbx2_TextEntered(object sneder, RoutedEventArgs e)
+        {
+            
+            if (pbx1.Password.Length > 4 && pbx1.Password.Length == pbx2.Password.Length)
+            {
+                CanCreate = true;
+            }
+            else
+            {
+                CanCreate = false;
+            }
+
+            Debug.Print("pbx2_TextEntered");
         }
     }
 }
