@@ -41,7 +41,13 @@ namespace moxpass
                 }
 
             }
-
+            if (argLen == 2)
+            {
+                if (args[0] == "config" && args[1] == "list")
+                {
+                    //TODO: Implement moxpass config list
+                }
+            }
             if (argLen == 3)
             {
                 if (args[0] == "complete" &&

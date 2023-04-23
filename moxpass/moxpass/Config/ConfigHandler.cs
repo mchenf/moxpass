@@ -21,6 +21,7 @@ namespace moxpass.Config
         };
         public Settings(string filePath)
         {
+
             this.settingFilePath = filePath;
             if(!File.Exists(settingFilePath))
             {
