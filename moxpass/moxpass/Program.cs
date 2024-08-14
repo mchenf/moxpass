@@ -12,7 +12,7 @@ namespace moxpass
         {
             Logger.Initialize();
 
-            Logger.Log("Application started.");
+            Logger.Log("[moxpass] Application started.");
 
 
             int argLen = args.Length;
