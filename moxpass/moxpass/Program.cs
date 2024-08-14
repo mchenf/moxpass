@@ -36,7 +36,7 @@ namespace moxpass
                 };
                 if (versionArgs.Contains(args[0]))
                 {
-                    var vhandler = new VersionHandler(0, 1, 1, 3);
+                    var vhandler = new VersionHandler(0, 1, 1, 4);
                     Console.WriteLine(vhandler.GetVersionString());
                 }
 
@@ -64,6 +64,7 @@ namespace moxpass
 
                 if (args[0] == "secret" && args[1] == "generate")
                 {
+                    Logger.Log("Generating secrets without parms");
                     if (int.TryParse(args[2], out int passLen))
                     {
                         SecretGenerator g = new SecretGenerator();
