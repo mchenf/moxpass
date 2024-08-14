@@ -21,7 +21,7 @@ namespace moxpass
             {
                 string[] helpArg = new string[]
                 {
-                    "/?", "-?", "-h", "/?",
+                    "/?", "-?", "-h",
                     "--help"
                 };
                 if (helpArg.Contains(args[0]))
